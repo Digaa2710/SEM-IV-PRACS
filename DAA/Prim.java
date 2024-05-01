@@ -33,8 +33,8 @@ public class Prim {
 
             for (int i = 0; i < n; i++) {
                 if (!visited[index] && map[index][i] != 0) {
-                    if (distance[i] >= distance[index] + map[index][i]) {
-                        distance[i] = distance[index] + map[index][i];
+                    if (distance[i] >= distance[index]) {
+                        distance[i] = distance[index] ;
                         parent[i] = index;
                         min_arr[i] = distance[i];
 
