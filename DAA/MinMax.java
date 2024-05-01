@@ -1,36 +1,32 @@
 import java.util.*;
 
-int max, min;
+public class Main {
+    static int max;
+    static int min;
 
-public class MinMax {
-
-    public Maxmin(int low,int high,int [] arr){
-        int min1,int max1;
-        if(low==high){
-            min=max=arr[high];
-        }
-        else if(low==high-1){
-            if(arr[low]<arr[high]){
-                min=arr[low];
-                max=arr[high];
+    public static void Maxmin(int low, int high, int[] arr) {
+        int min1, max1;
+        if (low == high) {
+            min = max = arr[low]; 
+        } else if (low == high - 1) {
+            if (arr[low] < arr[high]) {
+                min = arr[low];
+                max = arr[high];
+            } else {
+                min = arr[high];
+                max = arr[low];
             }
-            else{
-                min=arr[high];
-                max=arr[low];
+        } else {
+            int mid = (low + high) / 2;
+            Maxmin(low, mid, arr);
+            max1 = max;
+            min1 = min;
+            Maxmin(mid + 1, high, arr);
+            if (max < max1) {
+                max = max1;
             }
-        }
-        else{
-           int mid=(low+high)/2;
-            Maxmin(low,mid,arr);
-            max1=max;
-            min1=min;
-            Maxmin(mid+1,high,arr);
-            if(max<max1){
-                max=max1;
-
-            }
-            if(min>min1){
-                min=min1;
+            if (min > min1) {
+                min = min1;
             }
         }
     }
@@ -46,12 +42,11 @@ public class MinMax {
             arr[i] = sc.nextInt();
         }
 
-        max = a[0];
-        min = a[0];
+        max = arr[0]; 
+        min = arr[0]; 
 
-        Maxmin(1, n, arr);
-        System.out.println(min);
-        System.out.println(max);
-
+        Maxmin(0, n - 1, arr); 
+        System.out.println("Min: " + min);
+        System.out.println("Max: " + max);
     }
 }
