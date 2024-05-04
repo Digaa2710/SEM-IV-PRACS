@@ -22,6 +22,7 @@ int Nextvalue(int k,int n,int m){
 }
 
 int mcoloring(int k,int n,int m){
+    while(1){
     Nextvalue(k,n,m);
     if (x[k]==0){
         return 0;
@@ -30,9 +31,11 @@ int mcoloring(int k,int n,int m){
         for(int i=0;i<n;i++){
             printf("%d ",x[i]);
         }
+        printf("\n");
     }
     else{
         mcoloring(k+1,n,m);
+    }
     }
 }
     
