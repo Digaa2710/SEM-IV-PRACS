@@ -17,13 +17,15 @@ int main(){
     m=strlen(pattern);
     int p=0;
     int t0=0;
-    h=((int)pow(d,n-1))%q;
+    h=((int)pow(d,m-1))%q;
+    printf("%d",h);
+    
     for(int i=0;i<m;i++){
         p=(d*p+pattern[i])%q;
         t0=(d*t0+text[i])%q;
         
     }
-    for(int s=0;s<=n-m;s++){//check my manually checking 
+    for(int s=0;s<=n-m;s++){
         int count=0;
         if(p==t0){
            for(int i=0;i<m;i++){
@@ -32,11 +34,14 @@ int main(){
                }
            }
            if(count==m){
-               printf("Pattern occurs %d\n",s);
+               printf("Pattern occurs %d\n",s+1);
            }
         }
         if(s<n-m){//check by manually checking
             t0=(d*(t0-text[s]*h)+text[s+m])%q;
+            if(t0<0){
+                t0=t0+q;
+            }
            
         }
     }
