@@ -43,7 +43,9 @@ int main(){
     clock_t t1,t2,t3;
     int n=1001;
     int array[1001];
-   
+   for(int i=0;i<n;i++){
+       array[i]=i;
+   }
     t1=clock();
     Sort(array,0,n-1);
    
