@@ -56,6 +56,10 @@
             <button onclick="submit()">Submit</button>
             <span class="display"></span>
         </div>
+        <div class="name">
+            <span class="getName"></span>
+            <span class="getNumber"></span>
+        </div>
     </div>
     <script>
         function submit() {
@@ -95,7 +99,7 @@
                 document.querySelector('.errorn').innerHTML='Enter phone number';
                 flag4=0;
             }
-            else if(phone>10){
+            else if(phone.length!=10){
                 document.querySelector('.errorn').innerHTML='Invalid phone number ';
                 flag4=0;
             }
@@ -105,6 +109,8 @@
             }
             if (flag1 == 1 && flag2 == 1 && flag3 == 1 && flag4==1) {
                 alert("Form submitted successfully");
+                document.querySelector('.getName').innerHTML=name;
+                document.querySelector('.getNumber').innerHTML=phone;
             } else {
                 document.querySelector('.display').innerHTML = ' ';
             }
