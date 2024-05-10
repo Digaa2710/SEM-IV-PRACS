@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .register{
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+        }
+        .block{
+            display: flex;
+            flex-direction: column;
+        }
+        .error{
+        color:red;
+        }
+        .errora{
+            color:red;
+        }
+        .color{
+            background-color: aqua;
+        }
+        .quiz-container {
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+    <div class="register">
+        <p>Enter Name:</p>
+    <input type="text" class="name">
+    <span class="error"></span>
+    <p>Enter Age:</p>
+    <input type="number" class="age">
+    <span class="errora"></span>
+    <button onclick="verify()">Register</button>
+</div>
+<div class="quiz-container">
+<div class="register">
+<p>1)Catipal of India is</p>
+<button onclick="answer(this,'Mumbai')" class="op1">Mumbai</button>
+<button onclick="answer(this,'Gandhinagar')" class="op2">Gandhinagar</button>
+<button onclick="answer(this,'New Delhi')" class="op3">New Delhi</button>
+</div>
+<div class="register">
+    <p>1)Catipal of Madhya Pradesh is</p>
+    <button onclick="answer1(this,'Banglore')" class="op1">Banglore</button>
+    <button onclick="answer1(this,'Panji')" class="op2">Panji</button>
+    <button onclick="answer1(this,'Bhopal')" class="op3">Bhopal</button>
+    </div>
+    <div>
+        <button onclick="final()">Submit</button>
+        <span class="result"></span>
+    </div>
+</div>
+</div>
+
+ <script src="app.js"></script>
+
+</body>
+</html>
