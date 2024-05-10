@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        .block{
+            display: flex;
+            flex-direction: column;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="block">
+        <div class="inputs">
+            <input type="text" placeholder="Search here" class="input-search">
+        </div>
+        <table class="table-input">
+            <tr>
+                <td>Divya</td>
+                <td>Gandhi</td>
+                <td>S.Y.Btech</td>
+            </tr>
+            <tr>
+                <td>Gargi</td>
+                <td>Gandhi</td>
+                <td>SSC</td>
+            </tr>
+        </table> 
+    </div>
+    <script>
+        var searchInput = document.querySelector('.input-search');
+        var table = document.querySelector('.table-input');
+        var rows = table.getElementsByTagName('tr');
+
+        searchInput.addEventListener('keyup', function(event) {
+            var searchTerm = event.target.value.toLowerCase();
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName('td');
+                var found = false;
+                for (var j = 0; j < cells.length; j++) {
+                    var cellText = cells[j].textContent.toLowerCase();
+                    if (cellText.indexOf(searchTerm) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+                rows[i].style.display = found ? '' : 'none';
+            }
+        });
+    </script>
+</body>
+</html>
