@@ -1,1 +1,92 @@
+<!---This is just basic css more focus is on js you can add css accordingly--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        .name {
+            display: flex;
+            flex-direction: column;
+            max-width: 200px ;
+        }
+        .box {
+            display: flex;
+            flex-direction: column;
+        }
+        .error {
+            color: red;
+        }
+        .errorp{
+            color:red;
+        }
+        .errorc{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class='box'>
+        <div class="name">
+            <p>Name:</p>
+            <input type="text" class="name-input">
+            <span class="error"></span>
+        </div>
+        <div class="name">
+            <p>Password:</p>
+            <input type="password" class="password">
+            <span class="errorp"></span>
+        </div>
+        <div class="name">
+            <p>Confirm Password:</p>
+            <input type="password" class="cpassword">
+            <span class="errorc"></span>
+        </div>
+        <div class="name">
+            <button onclick="submit()">Submit</button>
+            <span class="display"></span>
+        </div>
+    </div>
+    <script>
+        function submit() {
+            var name = document.querySelector('.name-input').value;
+            var flag1 = 1;
+            if (name == '') {
+                document.querySelector('.error').innerHTML = 'Plz enter name';
+                flag1 = 0;
+            } else {
+                document.querySelector('.error').innerHTML = ' ';
+                flag1 = 1;
+            }
+            var flag2 = 1;
+            var password = document.querySelector('.password').value;
+           
+            var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            if (!passwordPattern.test(password)) {
+                document.querySelector('.errorp').innerHTML = 'Password must contain at least 8 characters with at least one uppercase letter, one lowercase letter, one number, and one special character';
+                flag2 = 0;
+            } else {
+                document.querySelector('.errorp').innerHTML = ' ';
+                flag2 = 1;
+            }
+            var flag3 = 1;
+            var confirm_password = document.querySelector('.cpassword').value;
+            if (password != confirm_password) {
+                document.querySelector('.errorc').innerHTML = 'Password does not match';
+                flag3 = 0;
+            } else {
+                document.querySelector('.errorc').innerHTML = ' ';
+                flag3 = 1;
+            }
+            if (flag1 == 1 && flag2 == 1 && flag3 == 1) {
+                alert("Form submitted successfully");
+            } else {
+                document.querySelector('.display').innerHTML = ' ';
+            }
+        }
+    </script>
+</body>
+</html>
 
