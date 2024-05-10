@@ -1,7 +1,7 @@
-<!---This is just basic css more focus is on js you can add css accordingly--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -25,6 +25,9 @@
         .errorc{
             color:red;
         }
+        .errorn{
+            color:red;
+        }
     </style>
 </head>
 <body>
@@ -43,6 +46,11 @@
             <p>Confirm Password:</p>
             <input type="password" class="cpassword">
             <span class="errorc"></span>
+        </div>
+        <div class="name">
+            <p>Phone Number:</p>
+            <input type="number" class="number-input">
+            <span class="errorn"></span>
         </div>
         <div class="name">
             <button onclick="submit()">Submit</button>
@@ -80,7 +88,22 @@
                 document.querySelector('.errorc').innerHTML = ' ';
                 flag3 = 1;
             }
-            if (flag1 == 1 && flag2 == 1 && flag3 == 1) {
+
+            var flag4=1;
+            var phone=document.querySelector('.number-input').value;
+            if(phone=='' ){
+                document.querySelector('.errorn').innerHTML='Enter phone number';
+                flag4=0;
+            }
+            else if(phone>10){
+                document.querySelector('.errorn').innerHTML='Invalid phone number ';
+                flag4=0;
+            }
+            else{
+                document.querySelector('.errorn').innerHTML='';
+                flag4=1;
+            }
+            if (flag1 == 1 && flag2 == 1 && flag3 == 1 && flag4==1) {
                 alert("Form submitted successfully");
             } else {
                 document.querySelector('.display').innerHTML = ' ';
@@ -89,4 +112,3 @@
     </script>
 </body>
 </html>
-
