@@ -82,8 +82,8 @@ function answer1(button: HTMLButtonElement, selectedOption1: string): void {
 function final(){
     const results:HTMLButtonElement|null=document.querySelector('.result');
 if(results){
-    console.log(count);
-    results.innerHTML=count.toString();
+    // console.log(count);
+    results.innerHTML=correct.toString();
     alert("Quiz completed successfully");
 }
 }
