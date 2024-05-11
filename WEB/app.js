@@ -70,8 +70,8 @@ function answer1(button, selectedOption1) {
 function final() {
     const results = document.querySelector('.result');
     if (results) {
-        console.log(count);
-        results.innerHTML = count.toString();
+        // console.log(count);
+        results.innerHTML = correct.toString();
         alert("Quiz completed successfully");
     }
 }
