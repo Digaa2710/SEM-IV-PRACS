@@ -16,11 +16,11 @@ int main(){
         else{
             printf("P%d is now thinking to eat\n",philosopher);
             if(forks[philosopher-1]==1){
-                printf("P%d is  gets fork %d\n",philosopher,philosopher);
+                printf("P%d gets fork %d\n",philosopher,philosopher);
                 forks[philosopher-1]=0;
             }
             if(forks[philosopher%n]==1){
-                printf("P%d is  gets fork %d\n",philosopher,philosopher%n+1);
+                printf("P%d gets fork %d\n",philosopher,philosopher%n+1);
                 forks[philosopher%n]=0;
             }
             printf("P%d starts eating...\n",philosopher);
