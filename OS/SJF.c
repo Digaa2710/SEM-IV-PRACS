@@ -2,8 +2,8 @@
 
 int main() {
   int n = 5;
-  int arrival[] = {1,3,6,7,9};
-  int burst[] = {7,3,2,10,8};
+  int arrival[] = {2,5,1,0,4};
+  int burst[] = {6,2,8,3,4};
   int process[n]; 
   int final[n]; 
   int visited[n]; 
@@ -67,7 +67,7 @@ int completion_time[n];
  
  printf("Process\tAT\tBT\tCT\tTAT\tWT\n");
   for (int i = 0; i < n; i++) {
-    printf("P%d\t%d\t%d\t%d\t%d\t%d\n", process[i], arrival[i], burst[i], completion_time[i],
+    printf("P%d\t%d\t%d\t%d\t%d\t%d\n", final[i], arrival[i], burst[i], completion_time[i],
            turn_around_time[i], waiting_time[i]);
   }
   printf("\n");
