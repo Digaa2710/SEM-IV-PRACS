@@ -7,17 +7,17 @@ int main(){
     int lastBlock=0;
     for(int i=0;i<5;i++){
         int index=-1;
-        for(int j=(lastBlock+1)%5;j!=lastBlock;j=(j+1)%5){
+        int j=lastBlock;
+        do{
             if(usedProcesses[j]==0 && blockSize[j]>=processSize[i]){
                     index=j;
                     lastBlock=j;
                     
                     break;
                 }
-            }
-            
-        
-        if(index!=-1){
+                 j=(j+1)%5;
+            } while(j!=lastBlock);
+           if(index!=-1){
             printf("Pocess %d goes to block %d\n",processSize[i],blockSize[index]);
             usedProcesses[index]=1;
         }
@@ -25,5 +25,4 @@ int main(){
             printf("Process %d cant be allocated\n",processSize[i]);
         }
     }
-    
 }
