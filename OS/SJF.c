@@ -67,7 +67,7 @@ int completion_time[n];
  
  printf("Process\tAT\tBT\tCT\tTAT\tWT\n");
   for (int i = 0; i < n; i++) {
-    printf("P%d\t%d\t%d\t%d\t%d\t%d\n", final[i], arrival[i], burst[i], completion_time[i],
+    printf("P%d\t%d\t%d\t%d\t%d\t%d\n", process[i], arrival[i], burst[i], completion_time[i],
            turn_around_time[i], waiting_time[i]);
   }
   printf("\n");
