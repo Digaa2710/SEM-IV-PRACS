@@ -1,9 +1,9 @@
 #include <stdio.h>
-#define n 5
+#define n 4
 int main() {
 
-  int arrival[] = {2,5,0,0,7};
-  int burst[] = {2,6,4,7,4};
+  int arrival[] = {0,1,5,6};
+  int burst[] = {2,2,3,4};
   int process[n]; 
   int final[n]; 
   int visited[n]; 
@@ -39,37 +39,29 @@ int main() {
 int completion_time[n];
   int turn_around_time[n];
   int waiting_time[n];
-  current_time+=arrival[0];
-  while (completed < n) {
-    int min_arrival= 1000; 
-    int min_index = -1; 
-
-  
-    for (int i = 0; i < n; i++) {
-      if (visited[i] == 0 && arrival[i] <= current_time && arrival[i] < min_arrival) {
-        min_arrival = arrival[i];
-        min_index = i;
+  current_time+=burst[0];
+  completion_time[0]=current_time;
+  for(int i=1;i<n;i++){
+      if(arrival[i]<=current_time){
+          current_time=current_time+burst[i];
+          completion_time[i]=current_time;
       }
-    }
-     completion_time[min_index] = current_time + burst[min_index];
-      turn_around_time[min_index] = completion_time[min_index] - arrival[min_index];
-      waiting_time[min_index] = turn_around_time[min_index] - burst[min_index];
-      final[completed] = process[min_index];
-      printf("%d\n", final[completed]);
-      visited[min_index] = 1;
-
-      current_time += burst[min_index];
-      completed++;
-    
+      else{
+          current_time=arrival[i]+burst[i];
+          completion_time[i]=current_time;
+      }
   }
-
+for(int i=0;i<n;i++){
+    turn_around_time[i]=completion_time[i]-arrival[i];
+    waiting_time[i]=turn_around_time[i]-burst[i];
+}
   
- 
- printf("Process\tAT\tBT\tCT\tTAT\tWT\n");
+  printf("Process\tAT\tBT\tCT\tTAT\tWT\n");
   for (int i = 0; i < n; i++) {
     printf("P%d\t%d\t%d\t%d\t%d\t%d\n", process[i], arrival[i], burst[i], completion_time[i],
            turn_around_time[i], waiting_time[i]);
   }
+ 
   printf("\n");
 
   return 0;
