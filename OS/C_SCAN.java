@@ -34,6 +34,8 @@ public class C_SCAN {
             }
 
             // Wrap around to the lower end
+            total_count += Math.abs(199 - current_head);
+            current_head = 199;
             total_count += Math.abs(0 - current_head);
             current_head = 0;
 
@@ -54,8 +56,10 @@ public class C_SCAN {
             }
 
             // Wrap around to the higher end
-            total_count += Math.abs(199 - current_head);
-            current_head = 199;
+            total_count += Math.abs(0- current_head);
+            current_head = 0;
+            total_count+=Math.abs(199-current_head);
+            current_head=199;
 
             for (int i = m - 1; i >= 0; i--) {
                 if (!visited[i]) {
