@@ -34,7 +34,7 @@ public class Optimal {
                     boolean foundFutureReference = false;
                     for (int k = i + 1; k < arr.length; k++) {
                         if (sol_arr[j] == arr[k]) {
-                            index[j] = k + 1; // Update index of future reference
+                            index[j] = i + 1; // Update index of future reference
                             foundFutureReference = true;
                             break;
                         }
