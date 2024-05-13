@@ -36,7 +36,7 @@ int complete=0;
             for(int j=0;j<3;j++){
                 if(visited[i]==0 && need[i][j]>available[j]){
                     canAllocate=0;
-                    visited[i]=1;
+                    visited[i]=0;
                     break;
                 }
             }
