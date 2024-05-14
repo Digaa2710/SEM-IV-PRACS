@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block{
+            display: flex;
+            flex-direction: column;
+            width:150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <p class="text">Hello World!</p>
+        <button onclick="change()">Click me</button>
+    </div>
+    <script>
+        let count=1;
+        function change(){
+            const variables=document.querySelector('body');
+            if(count==1){
+                variables.style.backgroundColor='red';
+                count++;
+            }
+            else if(count==2){
+                variables.style.backgroundColor='blue';
+                count++;
+            }
+            else if(count==3){
+                variables.style.backgroundColor='green';
+                count=1;
+            }
+        }
+    </script>
+</body>
+</html>
