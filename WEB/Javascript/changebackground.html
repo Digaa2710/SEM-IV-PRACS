@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block{
+            display: flex;
+            flex-direction: column;
+            width:150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <p class="text">Hello World!</p>
+        <button onclick="change()">Click me</button>
+    </div>
+    <script>
+        function change(){
+            const variables=document.querySelector('body');
+            const para=document.querySelector('.text');
+            variables.style.backgroundColor='red';
+            para.style.color='white';
+        }
+    </script>
+</body>
+</html>
