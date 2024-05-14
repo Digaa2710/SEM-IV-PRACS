@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    .block{
+        display: flex;
+       
+        gap:50px;
+    }
+    .cards1,.cards2{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .submit{
+        display: flex;
+       flex-direction: column;
+    }
+   </style>
+</head>
+<body >
+    <div class="block">
+        <div class="cards1">
+            <h1>chocolate</h1>
+            <button onclick="Add()">Add</button>
+            <button onclick="Delete()">Delete</button>
+        </div>
+        <div class="cards2">
+            <h1>biscuits</h1>
+            <button>Add</button>
+            <button>Delete</button>
+        </div>
+
+    </div>
+    <div>
+    <div class="submit" >
+        <button onclick="submit()">Submit</button>
+        <span class="text"></span>
+    </div>
+    </div>
+    <script src="shoppingCart.js"></script>
+</body>
+</html>
