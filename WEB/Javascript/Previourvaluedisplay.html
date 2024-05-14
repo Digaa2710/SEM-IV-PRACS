@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Name:</p>
+    <input type="text" class="new" placeholder="Name:" oninput="display()">
+    <span class="display"></span>
+    <script>
+        let previous='';
+        function display(){
+            const current=document.querySelector('.new').value;
+            const ncolor=document.querySelector('.display');
+            if(current==''){
+                document.querySelector('.display').innerHTML=previous;
+                ncolor.style.color='red';
+                
+            }
+            else{
+                document.querySelector('.display').innerHTML='';
+                previous=current;   
+            
+            }
+        }
+    </script>
+</body>
+</html>
