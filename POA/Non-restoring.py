@@ -52,25 +52,34 @@ def two_complement(M,n):
     
 def Non_restoring(Q,M,accum,n):
     for i in range(n):
-        accum=accum[1:]+[Q[0]]
+        
        
         if accum[0]==0:
+            accum=accum[1:]+[Q[0]]
             M_tcomplement=two_complement(M,n)
             accum=add(accum,M_tcomplement,0,n)
             if accum[0]==1:
                 Q=Q[1:]+[0]
-                
+                print("Q:",Q)
+                print("A:",accum)
             elif accum[0]==0:
                 Q=Q[1:]+[1]
+                print("Q:",Q)
+                print("A:",accum)
         elif accum[0]==1:
-               
+                accum=accum[1:]+[Q[0]]
                 accum=add(accum,M,0,n)
                 if accum[0]==1:
                     Q=Q[1:]+[0]
+                    print("Q:",Q)
+                    print("A:",accum)
                 elif accum[0]==0:
                     Q=Q[1:]+[1]
+                    print("Q:",Q)
+                    print("A:",accum)
     if accum[0]==1:
         accum=add(accum,M,0,n)
+        print(accum); 
     print(accum)
     print(Q)
     binary_decimal(accum,Q)
