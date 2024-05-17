@@ -1,1 +1,55 @@
+import './App.css';
+import { useState } from 'react';
+
+function App() {
+  const [visible, setVisible] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+  const [display, setDisplay] = useState('');
+
+  const show = () => {
+    setVisible(true);
+  };
+
+  function handleInput(event){
+    setInputValue(event.target.value);
+  }
+
+  const handleAdd = () => {
+    if (inputValue.trim() !== '') {
+      setDisplay(display + inputValue + '\n'); 
+      setVisible(false);
+      setInputValue(''); // Clear the input field
+    }
+  };
+
+  return (
+    <>
+      <div className='block'>
+        <div className={visible ? 'text1' : 'text'}>
+          <input
+            type='text'
+            value={inputValue}
+            onChange={handleInput}
+            placeholder='Enter text...'
+          />
+        </div>
+        <div className='btn'>
+          {visible ? (
+            <>
+              <button onClick={handleAdd}>Add</button>
+              <button>Delete</button>
+            </>
+          ) : (
+            <button onClick={show}>Show</button>
+          )}
+        </div>
+        <div>
+          <pre>{display}</pre>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default App;
 
