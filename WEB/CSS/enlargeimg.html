@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .initial{
+            width:500px;
+        }
+        .final{
+            width:700px;
+        }
+    </style>
+</head>
+<body>
+    <img src="mm.jpg" class="initial" onclick="enlarge()" id="new">
+    <script>
+        function enlarge(){
+            const value=document.getElementById('new');
+            value.classList.add('final');
+        }
+    </script>
+</body>
+</html>
