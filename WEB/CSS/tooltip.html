@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style >
+       
+        .tooltip-text{
+            opacity:0;
+            visibility: hidden;
+        }
+        .block:hover .tooltip-text{
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <button class="tooltip">Hover me</button>
+        <span class="tooltip-text">I m button</span>
+    </div>
+</body>
+</html>
