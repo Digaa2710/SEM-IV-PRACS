@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block{
+            display: flex;
+            flex-direction: column;
+            width:200px;
+        }
+        .Name{
+            display: flex;
+            flex-direction: column;
+        }
+        .New{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <div class="Name">
+            <p>Name:</p>
+            <input type="text" class="nameinput">
+            <span class="error"></span>
+        </div>
+        <div class="Name">
+            <p>Password:</p>
+            <input type="password" class="passinput">
+            <span class="erro"></span>
+        </div>
+        <div class="Name">
+            <p>Recheck Password</p>
+            <input type="password" class="cpass">
+            <span class="errorp"></span>
+        </div>
+        <div class="Name">
+            <p>Email</p>
+            <input type="email" class="inputemail">
+            <span class="errore"></span>
+        </div>
+        <div class="New">
+            <input type="radio" name="gender" id="male">
+            <p>Male</p>
+            <input type="radio" name="gender" id="female">
+            <p>Female</p>
+            
+        </div>
+        <span class="errorb"></span>
+        <div class="submit"  >
+            <button onclick="submit1()">submit</button>
+        </div>
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>
