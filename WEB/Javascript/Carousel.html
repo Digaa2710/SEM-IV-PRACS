@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block{
+            display: flex;
+            flex-direction: column;
+            width:500px;
+            padding: 5px;
+            background-color: plum;
+        }
+        .image{
+            display: flex;
+            width:500px;
+        }
+        .buttons{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <div class="image">
+            <img src="mickey.jpg" id="imagess" width="500px">
+        </div>
+        <div class="buttons">
+            <button onclick="move1()">Left</button>
+            <button onclick="move()">Right</button>
+        </div>
+    </div>
+    <script>
+        let index=0;
+        let images=['mickey.jpg','mini mouse.jpg','mm.jpg'];
+
+        function move(){
+            const val=document.getElementById('imagess');
+            val.src=images[index];
+            index++;
+            if(index>=images.length){
+                index=0;
+            }
+        }
+        function move1(){
+          
+            index--;
+            if(index<0){
+                index=images.length-1;
+            }
+            const val=document.getElementById('imagess');
+            val.src=images[index];
+            
+        }
+    </script>
+</body>
+</html>
